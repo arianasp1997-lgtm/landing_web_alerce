@@ -51,11 +51,21 @@ let scores = {
     mid: 0,
     high: 0
 };
+let diagnosticAnswers = [];
 
 diagOptions.forEach(option => {
     option.addEventListener('click', () => {
         const value = option.getAttribute('data-value');
+        const questionText = option.parentElement.previousElementSibling.innerText;
+        const answerText = option.innerText;
+        
         scores[value]++;
+        diagnosticAnswers.push({ 
+            step: currentStep, 
+            question: questionText, 
+            answer: answerText,
+            value: value
+        });
 
         const currentStepDiv = document.getElementById(`diag-step-${currentStep}`);
         currentStepDiv.classList.add('hidden');
@@ -68,24 +78,76 @@ diagOptions.forEach(option => {
             nextStepDiv.classList.remove('hidden');
             nextStepDiv.classList.add('animate-fade-in');
         } else {
-            showResult();
+            // All questions answered, show contact step instead of direct results
+            showContactStep();
         }
     });
 });
 
-function showResult() {
+function showContactStep() {
+    const contactStep = document.getElementById('diag-step-4');
+    if (contactStep) {
+        contactStep.classList.remove('hidden');
+        contactStep.classList.add('animate-fade-in');
+    }
+}
+
+// Handle Diagnostic Contact Form
+const diagContactForm = document.getElementById('diag-contact-form');
+if (diagContactForm) {
+    diagContactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('diag-name').value;
+        const contact = document.getElementById('diag-email').value;
+        const submitBtn = diagContactForm.querySelector('button[type="submit"]');
+        
+        // Final Recommendation logic
+        let recommendation = "";
+        if (scores.low >= 2) {
+            recommendation = "Tu negocio tiene un alto potencial de crecimiento mediante la automatización básica. Estás perdiendo tiempo valioso en tareas que hoy mismo podríamos delegar a la tecnología.";
+        } else if (scores.high >= 2) {
+            recommendation = "¡Vas por excelente camino! Tu enfoque ahora debería ser la Inteligencia de Negocios avanzada para encontrar ese 1% de mejora que escala tus resultados exponencialmente.";
+        } else {
+            recommendation = "Estás en una etapa intermedia ideal para integrar tus sistemas. La falta de conexión entre tus datos es lo que te impide tener una visión clara de hacia dónde ir.";
+        }
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Procesando...';
+
+        try {
+            // 👇 ARIANA: REEMPLAZA ESTA URL CON TU WEBHOOK DE N8N PARA DIAGNÓSTICOS
+            const n8nDiagnosticUrl = 'https://TU_N8N_URL/webhook-test/landing-diagnostico';
+            
+            await fetch(n8nDiagnosticUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name,
+                    contact,
+                    answers: diagnosticAnswers,
+                    recommendation,
+                    scores,
+                    date: new Date().toISOString()
+                })
+            });
+
+            // Hide contact step and show results
+            document.getElementById('diag-step-4').classList.add('hidden');
+            showResult(recommendation);
+        } catch (error) {
+            console.error('Error enviando diagnóstico:', error);
+            // Even if error, show results so we don't block user, but maybe show alert later
+            document.getElementById('diag-step-4').classList.add('hidden');
+            showResult(recommendation);
+        }
+    });
+}
+
+function showResult(message) {
     diagResult.classList.remove('hidden');
     diagResult.classList.add('animate-fade-in');
-    
-    let message = "";
-    if (scores.low >= 2) {
-        message = "Tu negocio tiene un alto potencial de crecimiento mediante la automatización básica. Estás perdiendo tiempo valioso en tareas que hoy mismo podríamos delegar a la tecnología.";
-    } else if (scores.high >= 2) {
-        message = "¡Vas por excelente camino! Tu enfoque ahora debería ser la Inteligencia de Negocios avanzada para encontrar ese 1% de mejora que escala tus resultados exponencialmente.";
-    } else {
-        message = "Estás en una etapa intermedia ideal para integrar tus sistemas. La falta de conexión entre tus datos es lo que te impide tener una visión clara de hacia dónde ir.";
-    }
-    
     diagMessage.innerText = message;
 }
 
