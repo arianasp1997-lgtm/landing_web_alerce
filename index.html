@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo Alerce | Inteligencia de Negocios y Automatización</title>
+    <meta name="description" content="Transformamos datos y procesos en crecimiento para tu negocio. Soluciones 100% personalizadas de automatización y BI.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-alerce-black text-white antialiased">
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 glass" id="main-header">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-alerce-violet to-alerce-green rounded-lg flex items-center justify-center shadow-lg">
+                    <span class="font-bold text-xl">A</span>
+                </div>
+                <span class="font-bold text-xl tracking-tight">Equipo Alerce</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#problemas" class="hover:text-alerce-violet transition-colors">Problemas</a>
+                <a href="#soluciones" class="hover:text-alerce-violet transition-colors">Soluciones</a>
+                <a href="#proceso" class="hover:text-alerce-violet transition-colors">Proceso</a>
+                <a href="#contacto" class="hover:text-alerce-violet transition-colors">Contacto</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="https://wa.me/542915394413" class="btn-primary">WhatsApp</a>
+            </div>
+            
+            <!-- Mobile Toggle -->
+            <button class="md:hidden text-white" id="menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden absolute top-full left-0 w-full bg-alerce-black/95 backdrop-blur-xl border-b border-white/10 py-6 md:hidden" id="mobile-menu">
+            <div class="flex flex-col items-center space-y-6">
+                <a href="#problemas" class="menu-link text-lg">Problemas</a>
+                <a href="#soluciones" class="menu-link text-lg">Soluciones</a>
+                <a href="#proceso" class="menu-link text-lg">Proceso</a>
+                <a href="#contacto" class="menu-link text-lg">Contacto</a>
+                <a href="https://wa.me/542915394413" class="btn-primary w-2/3 text-center">WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <!-- Animated Blobs -->
+            <div class="absolute top-1/4 -left-20 w-72 h-72 bg-alerce-violet/20 rounded-full blur-[100px] animate-blob"></div>
+            <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-alerce-green/20 rounded-full blur-[100px] animate-blob animation-delay-2000"></div>
+            
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <div class="inline-block px-4 py-1.5 mb-6 glass rounded-full text-xs font-semibold tracking-wider text-alerce-green uppercase" data-aos="fade-down">
+                    Soluciones 100% Personalizadas
+                </div>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-8" data-aos="fade-up" data-aos-delay="100">
+                    Transformamos datos y procesos en <span class="text-gradient">crecimiento</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
+                    Automatización, análisis de datos y optimización empresarial diseñada exclusivamente para escalar tu negocio.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://wa.me/542915394413" class="btn-primary flex items-center justify-center gap-2">
+                        <span>Escribir por WhatsApp</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"></path><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </a>
+                    <a href="#diagnostico" class="btn-secondary">Solicitar diagnóstico</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof / Clients Section (Commented out per request) -->
+        <!--
+        <section class="py-20 border-y border-white/5 bg-white/[0.02]">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-sm font-medium text-gray-500 uppercase tracking-[0.2em] mb-12">Empresas que confían en nosotros</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-2xl tracking-tighter">NegoZona</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-2xl tracking-tighter italic">Quilmes</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-2xl tracking-tighter uppercase">AB InBev</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-2xl tracking-tighter">Scentia</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- Problems Section -->
+        <section id="problemas" class="py-32 relative">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mb-16">
+                    <h2 class="text-alerce-violet font-semibold mb-4 tracking-wider uppercase text-sm" data-aos="fade-right">El costo de la desorganización</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-right" data-aos-delay="100">¿Tu negocio se siente estancado o fuera de control?</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="glass p-8 rounded-3xl hover:border-alerce-violet/50 transition-colors group" data-aos="fade-up">
+                        <div class="w-12 h-12 rounded-2xl bg-alerce-violet/10 flex items-center justify-center mb-6 group-hover:bg-alerce-violet/20 transition-colors text-alerce-violet">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Pérdida de Ventas</h4>
+                        <p class="text-gray-400">La desorganización en los procesos hace que oportunidades reales se pierdan por falta de seguimiento.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass p-8 rounded-3xl hover:border-alerce-green/50 transition-colors group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 rounded-2xl bg-alerce-green/10 flex items-center justify-center mb-6 group-hover:bg-alerce-green/20 transition-colors text-alerce-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Tareas Manuales</h4>
+                        <p class="text-gray-400">Tanto dueños como colaboradores pierden horas en tareas repetitivas que podrían estar automatizadas.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="glass p-8 rounded-3xl hover:border-white/30 transition-colors group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-white/10 transition-colors text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Falta de Información</h4>
+                        <p class="text-gray-400">Dificultad para entender sus números y no saber exactamente cuánto stock comprar o dónde invertir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="soluciones" class="py-32 bg-alerce-soft/30 relative">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <h2 class="text-alerce-green font-semibold mb-4 tracking-wider uppercase text-sm" data-aos="fade-up">Nuestras Soluciones</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up" data-aos-delay="100">Creamos el motor que impulsa tu eficiencia</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Solution 1 -->
+                    <div class="glass p-10 rounded-[2.5rem] relative overflow-hidden group" data-aos="fade-right">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-alerce-violet/10 rounded-full blur-[40px] group-hover:bg-alerce-violet/20 transition-all"></div>
+                        <h4 class="text-2xl font-bold mb-6 flex items-center gap-4">
+                            <span class="w-8 h-8 rounded-full bg-alerce-violet flex items-center justify-center text-xs">01</span>
+                            Automatización de Procesos
+                        </h4>
+                        <ul class="space-y-4 text-gray-400 mb-8">
+                            <li class="flex items-start gap-2">
+                                <svg class="mt-1 flex-shrink-0 text-alerce-green" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Eliminación de tareas repetitivas.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="mt-1 flex-shrink-0 text-alerce-green" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Integración de herramientas (CRMs, ERPs, Excel).
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="mt-1 flex-shrink-0 text-alerce-green" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Flujos de trabajo automáticos 24/7.
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Solution 2 -->
+                    <div class="glass p-10 rounded-[2.5rem] relative overflow-hidden group" data-aos="fade-left">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-alerce-green/10 rounded-full blur-[40px] group-hover:bg-alerce-green/20 transition-all"></div>
+                        <h4 class="text-2xl font-bold mb-6 flex items-center gap-4">
+                            <span class="w-8 h-8 rounded-full bg-alerce-green flex items-center justify-center text-xs">02</span>
+                            Business Intelligence & Data
+                        </h4>
+                        <ul class="space-y-4 text-gray-400 mb-8">
+                            <li class="flex items-start gap-2">
+                                <svg class="mt-1 flex-shrink-0 text-alerce-green" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Dashboards dinámicos en Power BI.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="mt-1 flex-shrink-0 text-alerce-green" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Análisis predictivo de stock y ventas.
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="mt-1 flex-shrink-0 text-alerce-green" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Reportes listos para la toma de decisiones.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="proceso" class="py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-4xl font-bold mb-20" data-aos="fade-up">Cómo Trabajamos</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+                    <!-- Connector Line (Desktop) -->
+                    <div class="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-white/5 -z-10"></div>
+                    
+                    <!-- Step 1 -->
+                    <div class="text-center" data-aos="fade-up">
+                        <div class="w-20 h-20 rounded-full bg-alerce-black border-4 border-alerce-violet shadow-[0_0_15px_rgba(139,92,246,0.3)] flex items-center justify-center mx-auto mb-6 text-2xl font-bold">1</div>
+                        <h5 class="text-lg font-bold mb-2 text-gradient">Diagnóstico</h5>
+                        <p class="text-sm text-gray-400">Analizamos tu situación actual y detectamos cuellos de botella.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 rounded-full bg-alerce-black border-4 border-white/10 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-gray-500">2</div>
+                        <h5 class="text-lg font-bold mb-2">Estrategia</h5>
+                        <p class="text-sm text-gray-400">Identificamos oportunidades de mejora personalizadas al 100%.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 rounded-full bg-alerce-black border-4 border-white/10 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-gray-500">3</div>
+                        <h5 class="text-lg font-bold mb-2">Desarrollo</h5>
+                        <p class="text-sm text-gray-400">Construimos las herramientas y flujos automatizados.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-20 h-20 rounded-full bg-alerce-black border-4 border-alerce-green shadow-[0_0_15px_rgba(16,185,129,0.3)] flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">4</div>
+                        <h5 class="text-lg font-bold mb-2 text-gradient">Implementación</h5>
+                        <p class="text-sm text-gray-400">Puesta en marcha y acompañamiento en la mejora continua.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnostic Interactive Block -->
+        <section id="diagnostico" class="py-32 relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="glass max-w-4xl mx-auto rounded-[3rem] p-8 md:p-16 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-alerce-green/10 rounded-full blur-[80px] -mr-32 -mt-32"></div>
+                    
+                    <div id="diag-container">
+                        <div class="text-center mb-12">
+                            <h3 class="text-3xl md:text-4xl font-bold mb-4">¿Qué tan optimizado está tu negocio?</h3>
+                            <p class="text-gray-400">Responde 3 preguntas y recibe una recomendación preliminar.</p>
+                        </div>
+                        
+                        <div id="diag-step-1" class="diag-step space-y-8">
+                            <p class="text-xl font-medium text-center">1. ¿Qué tan manuales son tus procesos operativos?</p>
+                            <div class="grid grid-cols-1 gap-4">
+                                <button class="diag-option w-full p-6 glass rounded-2xl text-left hover:border-alerce-violet/50 transition-all" data-value="low">Todo se hace manual (Excel, papel, carga duplicada)</button>
+                                <button class="diag-option w-full p-6 glass rounded-2xl text-left hover:border-alerce-violet/50 transition-all" data-value="mid">Tengo algunas herramientas pero no están conectadas</button>
+                                <button class="diag-option w-full p-6 glass rounded-2xl text-left hover:border-alerce-violet/50 transition-all" data-value="high">Tengo procesos automatizados y flujos eficientes</button>
+                            </div>
+                        </div>
+
+                        <div id="diag-step-2" class="diag-step hidden space-y-8">
+                            <p class="text-xl font-medium text-center">2. ¿Tomas decisiones basadas en datos reales y actualizados?</p>
+                            <div class="grid grid-cols-1 gap-4">
+                                <button class="diag-option w-full p-6 glass rounded-2xl text-left hover:border-alerce-violet/50 transition-all" data-value="low">No tengo reportes claros de ventas o stock</button>
+                                <button class="diag-option w-full p-6 glass rounded-2xl text-left hover:border-alerce-violet/50 transition-all" data-value="mid">Tengo reportes pero me toma mucho tiempo armarlos</button>
+                                <button class="diag-option w-full p-6 glass rounded-2xl text-left hover:border-alerce-violet/50 transition-all" data-value="high">Tengo dashboards automáticos para decidir al momento</button>
+                            </div>
+                        </div>
+
+                        <div id="diag-step-3" class="diag-step hidden space-y-8">
+                            <p class="text-xl font-medium text-center">3. ¿Tu negocio puede funcionar sin que estés presente?</p>
+                            <div class="grid grid-cols-1 gap-4">
+                                <button class="diag-option w-full p-6 glass rounded-2xl text-left hover:border-alerce-violet/50 transition-all" data-value="low">No, dependo totalmente del día a día</button>
+                                <button class="diag-option w-full p-6 glass rounded-2xl text-left hover:border-alerce-violet/50 transition-all" data-value="mid">Funciona, pero hay mucha desorganización si no estoy</button>
+                                <button class="diag-option w-full p-6 glass rounded-2xl text-left hover:border-alerce-violet/50 transition-all" data-value="high">Sí, los procesos están claros y definidos</button>
+                            </div>
+                        </div>
+
+                        <div id="diag-result" class="diag-step hidden text-center space-y-8">
+                            <div class="w-20 h-20 bg-alerce-green/20 rounded-full flex items-center justify-center mx-auto text-alerce-green">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <h4 class="text-2xl font-bold">¡Diagnóstico Completado!</h4>
+                            <p id="diag-message" class="text-gray-400 text-lg"></p>
+                            <div class="pt-6">
+                                <a href="https://wa.me/542915394413" class="btn-primary">Consultar Estrategia Detallada</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="py-32">
+            <div class="container mx-auto px-6 text-center">
+                <div class="inline-block p-1 bg-gradient-to-r from-alerce-violet to-alerce-green rounded-full mb-8">
+                    <div class="bg-alerce-black rounded-full px-6 py-2">
+                        <span class="text-sm font-semibold tracking-wider uppercase text-alerce-violet">Únete a la transformación</span>
+                    </div>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-bold mb-10" data-aos="fade-up">Empezá a optimizar tu negocio hoy</h2>
+                <div class="flex flex-col sm:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://wa.me/542915394413" class="btn-primary text-lg px-12">WhatsApp</a>
+                    <a href="#contacto" class="btn-secondary text-lg px-12">Enviar consulta</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto" class="py-20 border-t border-white/5 bg-alerce-soft/20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-alerce-violet to-alerce-green rounded flex items-center justify-center">
+                            <span class="font-bold text-lg">A</span>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight">Equipo Alerce</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">Empoderamos pymes y profesionales a través de la tecnología y el análisis estratégico de datos.</p>
+                </div>
+                
+                <div>
+                    <h6 class="font-bold mb-6 text-gray-300">Contacto</h6>
+                    <ul class="space-y-4 text-gray-500 text-sm">
+                        <li>
+                            <a href="https://wa.me/542915394413" class="flex items-center gap-3 hover:text-alerce-green transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-alerce-green"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                +54 2915 39-4413
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/equipo_alerce/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-alerce-violet transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-alerce-violet"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                @equipo_alerce
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h6 class="font-bold mb-6 text-gray-300">Construyamos juntos</h6>
+                    <p class="text-gray-500 text-sm mb-4">Déjanos tu correo y te enviaremos una auditoría express gratuita de tus procesos.</p>
+                    <form id="contact-form" class="flex gap-2 relative">
+                        <input type="email" id="email-input" name="email" required placeholder="Tu email corporativo" class="bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-alerce-green w-full">
+                        <button type="submit" class="p-2 bg-gradient-to-r from-alerce-violet to-alerce-green text-white rounded-xl hover:scale-105 transition-transform flex items-center justify-center shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                        </button>
+                        <div id="form-message" class="absolute top-full mt-2 left-0 text-xs hidden"></div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="text-center text-xs text-gray-600 border-t border-white/5 pt-10 flex flex-col items-center">
+                <p>&copy; 2026 Equipo Alerce. Todos los derechos reservados. Diseñado para el crecimiento empresarial.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button id="scroll-top-btn" class="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-gradient-to-r from-alerce-violet to-alerce-green text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] opacity-0 translate-y-10 pointer-events-none transition-all duration-300 hover:scale-110 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
