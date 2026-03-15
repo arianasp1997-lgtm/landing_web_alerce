@@ -140,7 +140,7 @@ if (diagContactForm) {
                 body: JSON.stringify({
                     name,
                     email,
-                    phone: phone || "No proporcionado",
+                    phone: phone || "No proporcionado.",
                     answers: diagnosticAnswers,
                     recommendation,
                     scores,
