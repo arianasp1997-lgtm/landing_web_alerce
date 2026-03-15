@@ -106,7 +106,7 @@ if (diagContactForm) {
 
         // Email validation regex
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
+
         if (!emailRegex.test(email)) {
             errorDiv.classList.remove('hidden');
             document.getElementById('diag-email').classList.add('border-red-500');
@@ -131,8 +131,8 @@ if (diagContactForm) {
         submitBtn.innerText = 'Procesando...';
 
         try {
-            // 👇 ARIANA: REEMPLAZA ESTA URL CON TU WEBHOOK DE N8N PARA DIAGNÓSTICOS
-            const n8nDiagnosticUrl = 'https://automatizaciones.equipoalerce.com.ar/webhook-test/c26c9754-94ad-447e-9c58-428acd214191';
+            // 👇 ARIANA: Usando variables de entorno para mayor seguridad y flexibilidad
+            const n8nDiagnosticUrl = import.meta.env.VITE_N8N_DIAGNOSTIC_WEBHOOK_URL;
 
             await fetch(n8nDiagnosticUrl, {
                 method: 'POST',
@@ -250,8 +250,8 @@ if (contactForm) {
         submitBtn.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
 
         try {
-            // 👇 ARIANA: REEMPLAZA ESTA URL CON LA "TEST URL" o "PRODUCTION URL" DE TU WEBHOOK DE N8N
-            const n8nWebhookUrl = 'https://automatizaciones.equipoalerce.com.ar/webhook-test/c26c9754-94ad-447e-9c58-428acd214191';
+            // 👇 ARIANA: Usando variables de entorno
+            const n8nWebhookUrl = import.meta.env.VITE_N8N_GENERAL_WEBHOOK_URL;
 
             const response = await fetch(n8nWebhookUrl, {
                 method: 'POST',
