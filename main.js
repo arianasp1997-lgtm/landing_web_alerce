@@ -58,11 +58,11 @@ diagOptions.forEach(option => {
         const value = option.getAttribute('data-value');
         const questionText = option.parentElement.previousElementSibling.innerText;
         const answerText = option.innerText;
-        
+
         scores[value]++;
-        diagnosticAnswers.push({ 
-            step: currentStep, 
-            question: questionText, 
+        diagnosticAnswers.push({
+            step: currentStep,
+            question: questionText,
             answer: answerText,
             value: value
         });
@@ -73,7 +73,7 @@ diagOptions.forEach(option => {
         currentStep++;
 
         const nextStepDiv = document.getElementById(`diag-step-${currentStep}`);
-        
+
         if (nextStepDiv) {
             nextStepDiv.classList.remove('hidden');
             nextStepDiv.classList.add('animate-fade-in');
@@ -97,11 +97,25 @@ const diagContactForm = document.getElementById('diag-contact-form');
 if (diagContactForm) {
     diagContactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
-        const name = document.getElementById('diag-name').value;
-        const contact = document.getElementById('diag-email').value;
+
+        const name = document.getElementById('diag-name').value.trim();
+        const email = document.getElementById('diag-email').value.trim();
+        const phone = document.getElementById('diag-phone').value.trim();
+        const errorDiv = document.getElementById('diag-error');
         const submitBtn = diagContactForm.querySelector('button[type="submit"]');
+
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
+        if (!emailRegex.test(email)) {
+            errorDiv.classList.remove('hidden');
+            document.getElementById('diag-email').classList.add('border-red-500');
+            return;
+        } else {
+            errorDiv.classList.add('hidden');
+            document.getElementById('diag-email').classList.remove('border-red-500');
+        }
+
         // Final Recommendation logic
         let recommendation = "";
         if (scores.low >= 2) {
@@ -118,14 +132,15 @@ if (diagContactForm) {
 
         try {
             // 👇 ARIANA: REEMPLAZA ESTA URL CON TU WEBHOOK DE N8N PARA DIAGNÓSTICOS
-            const n8nDiagnosticUrl = 'https://TU_N8N_URL/webhook-test/landing-diagnostico';
-            
+            const n8nDiagnosticUrl = 'https://automatizaciones.equipoalerce.com.ar/webhook-test/c26c9754-94ad-447e-9c58-428acd214191';
+
             await fetch(n8nDiagnosticUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     name,
-                    contact,
+                    email,
+                    phone: phone || "No proporcionado",
                     answers: diagnosticAnswers,
                     recommendation,
                     scores,
@@ -225,32 +240,32 @@ const formMessage = document.getElementById('form-message');
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         const emailInput = document.getElementById('email-input').value;
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalBtnContent = submitBtn.innerHTML;
-        
+
         // Disable button & show loading state
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
-        
+
         try {
             // 👇 ARIANA: REEMPLAZA ESTA URL CON LA "TEST URL" o "PRODUCTION URL" DE TU WEBHOOK DE N8N
-            const n8nWebhookUrl = 'https://TU_N8N_URL/webhook-test/landing-contacto';
-            
+            const n8nWebhookUrl = 'https://automatizaciones.equipoalerce.com.ar/webhook-test/c26c9754-94ad-447e-9c58-428acd214191';
+
             const response = await fetch(n8nWebhookUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 // Aquí enviamos el email, el origen y la fecha actual
-                body: JSON.stringify({ 
-                    email: emailInput, 
-                    source: 'Landing Page Alerce - Footer', 
-                    date: new Date().toISOString() 
+                body: JSON.stringify({
+                    email: emailInput,
+                    source: 'Landing Page Alerce - Footer',
+                    date: new Date().toISOString()
                 })
             });
-            
+
             if (response.ok) {
                 formMessage.textContent = '¡Gracias! Nos pondremos en contacto pronto.';
                 formMessage.className = 'absolute top-full mt-2 left-0 text-xs text-alerce-green block animate-fade-in';
@@ -265,7 +280,7 @@ if (contactForm) {
         } finally {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnContent;
-            
+
             // Ocultar mensaje después de 5 segundos
             setTimeout(() => {
                 formMessage.classList.add('hidden');
