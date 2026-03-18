@@ -98,9 +98,14 @@ if (diagContactForm) {
     diagContactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const name = document.getElementById('diag-name').value.trim();
-        const email = document.getElementById('diag-email').value.trim();
-        const phone = document.getElementById('diag-phone').value.trim();
+        const nameElem = document.getElementById('diag-name');
+        const name = nameElem ? nameElem.value.trim() : 'No proporcionado';
+        
+        const emailElem = document.getElementById('diag-email');
+        const email = emailElem ? emailElem.value.trim() : '';
+        
+        const phoneElem = document.getElementById('diag-phone');
+        const phone = phoneElem ? phoneElem.value.trim() : 'No proporcionado';
         const errorDiv = document.getElementById('diag-error');
         const submitBtn = diagContactForm.querySelector('button[type="submit"]');
 
