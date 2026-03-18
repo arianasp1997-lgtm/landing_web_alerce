@@ -14,6 +14,16 @@
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PZ6YL0NVNT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-PZ6YL0NVNT');
+    </script>
 </head>
 
 <body class="bg-alerce-black text-white antialiased">
@@ -81,23 +91,22 @@
                 </div>
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-8" data-aos="fade-up"
                     data-aos-delay="100">
-                    Transformamos datos y procesos en <span class="text-gradient">crecimiento</span>
+                    Automatiza Tareas Repetitivas y Recupera <span class="text-gradient">15+ Horas</span> a la Semana
                 </h1>
                 <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10" data-aos="fade-up"
                     data-aos-delay="200">
-                    Automatización, análisis de datos y optimización empresarial diseñada exclusivamente para escalar tu
-                    negocio.
+                    Sistemas a medida para PyMEs: Dashboards en tiempo real y procesos automatizados para que dejes de apagar incendios y empieces a escalar.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
-                    <a href="https://wa.me/542915394413" class="btn-primary flex items-center justify-center gap-2">
-                        <span>Escribir por WhatsApp</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                <div class="flex flex-col items-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#diagnostico" class="btn-primary text-lg px-8 py-4">Descubrir Cuánto Tiempo Puedo Ahorrar</a>
+                    <a href="https://wa.me/542915394413" class="text-gray-400 hover:text-alerce-green transition-colors flex items-center gap-2 text-sm mt-2">
+                        <span>¿Tienes dudas? Hablemos por WhatsApp</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 2L11 13"></path>
                             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                         </svg>
                     </a>
-                    <a href="#diagnostico" class="btn-secondary">Solicitar diagnóstico</a>
                 </div>
             </div>
         </section>
@@ -196,7 +205,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-20">
                     <h2 class="text-alerce-green font-semibold mb-4 tracking-wider uppercase text-sm"
-                        data-aos="fade-up">Nuestras Soluciones</h2>
+                        data-aos="fade-up">Sistemas que Trabajan 24/7 por Ti</h2>
                     <h3 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up" data-aos-delay="100">Creamos el
                         motor que impulsa tu eficiencia</h3>
                 </div>
@@ -284,7 +293,7 @@
         <!-- Process Section -->
         <section id="proceso" class="py-32">
             <div class="container mx-auto px-6">
-                <h2 class="text-center text-4xl font-bold mb-20" data-aos="fade-up">Cómo Trabajamos</h2>
+                <h2 class="text-center text-4xl font-bold mb-20" data-aos="fade-up">Tu Negocio en Piloto Automático en 4 Pasos</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
                     <!-- Connector Line (Desktop) -->
@@ -339,7 +348,11 @@
                     <div id="diag-container">
                         <div class="text-center mb-12">
                             <h3 class="text-3xl md:text-4xl font-bold mb-4">¿Qué tan optimizado está tu negocio?</h3>
-                            <p class="text-gray-400">Responde 3 preguntas y recibe una recomendación preliminar.</p>
+                            <p class="text-gray-400 mb-4">Responde 3 preguntas y recibe una recomendación preliminar.</p>
+                            <div class="inline-block bg-alerce-violet/10 border border-alerce-violet/20 rounded-2xl px-5 py-3 text-left max-w-xl mx-auto">
+                                <span class="text-alerce-violet font-bold text-sm block mb-1">🎁 Bonus de hoy:</span>
+                                <span class="text-gray-300 text-sm">Termina este test de 1 minuto y recibe gratis nuestra «Plantilla de Auditoría de Cuellos de Botella» que usamos con clientes corporativos.</span>
+                            </div>
                         </div>
 
                         <div id="diag-step-1" class="diag-step space-y-8">
@@ -408,16 +421,11 @@
                                         <input type="email" id="diag-email" required placeholder="ejemplo@correo.com"
                                             class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-alerce-violet">
                                     </div>
-                                    <div class="space-y-2">
-                                        <label for="diag-phone" class="text-sm font-medium text-gray-400">Teléfono /
-                                            WhatsApp (Opcional)</label>
-                                        <input type="tel" id="diag-phone" placeholder="Ej: +54 9 11..."
-                                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-alerce-violet">
-                                    </div>
                                     <div id="diag-error" class="text-red-500 text-xs hidden">Por favor, ingresa un
                                         correo electrónico válido.</div>
                                 </div>
-                                <button type="submit" class="btn-primary w-full py-4 mt-4">Ver mi resultado</button>
+                                <button type="submit" class="btn-primary w-full py-4 mt-4">Obtener mi Plan de Optimización Gratis</button>
+                                <p class="text-xs text-gray-500 text-center mt-3 font-medium">Trabajamos de forma personalizada. Solo tomamos 4 nuevos diagnósticos gratuitos por mes. <span class="text-white">(2 cupos restantes de Marzo)</span>.</p>
                             </form>
                         </div>
 

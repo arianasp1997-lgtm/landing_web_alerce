@@ -148,6 +148,14 @@ if (diagContactForm) {
                 })
             });
 
+            // Enviar evento de Lead a GA4
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'generate_lead', {
+                    'event_category': 'engagement',
+                    'form_name': 'diagnostico_cro'
+                });
+            }
+
             // Hide contact step and show results
             document.getElementById('diag-step-4').classList.add('hidden');
             showResult(recommendation);
@@ -291,3 +299,17 @@ if (contactForm) {
 }
 
 console.log('Equipo Alerce Landing Page Loaded');
+
+// Track GA4 Clicks on WhatsApp Links
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'click_whatsapp', {
+                    'event_category': 'engagement',
+                    'button_text': btn.innerText ? btn.innerText.trim() : 'WhatsApp Icon'
+                });
+            }
+        });
+    });
+});
